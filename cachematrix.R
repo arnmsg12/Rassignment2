@@ -37,13 +37,13 @@ cacheSolve <- function(x, ...) {
                 message("getting cached data")
                 return(inverseM)
         }
-        # check that x is a square matrix
+        # check that x underlying matrix is a square matrix
         if (!is.matrix(x$get()) || nrow(x$get())!=ncol(x$get())) {
                 stop('source data is not a square matrix')
         }
         data <- x$get()
         
-        # check that x is inversible
+        # check that x underlying matrix is inversible
         if (det(data) == 0) {
                 stop('matrix inverse does not exist')
         }
